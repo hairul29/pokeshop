@@ -1,0 +1,3 @@
+import type {PokemonType} from "../types/Product";
+export const typeColors:Record<PokemonType,string>={Normal:'#8d99ae',Fire:'#e3350d',Water:'#3b4cca',Electric:'#ffcb05',Grass:'#4caf50',Ice:'#64d8ff',Fighting:'#c44536',Poison:'#9b59b6',Ground:'#b8860b',Flying:'#7e8ce0',Psychic:'#ed64a6',Bug:'#7cb342',Rock:'#a67c52',Ghost:'#6c63a8',Dragon:'#4c6ef5',Dark:'#343a40',Steel:'#7f8c8d',Fairy:'#d36bb3'};
+export const typeIcons:Record<PokemonType,string>={Normal:'◌',Fire:'✦',Water:'≈',Electric:'ϟ',Grass:'❋',Ice:'◇',Fighting:'✊',Poison:'◈',Ground:'⌁',Flying:'↗',Psychic:'✧',Bug:'◍',Rock:'⬢',Ghost:'☾',Dragon:'♢',Dark:'●',Steel:'▣',Fairy:'✿'};

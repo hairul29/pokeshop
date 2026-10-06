@@ -1,0 +1,2 @@
+import {Link} from "react-router-dom";import {RightOutlined} from "@ant-design/icons";import type {PokemonType} from "../types/Product";import {typeColors,typeIcons} from "../data/typeTheme";
+export default function CategoryCard({type}:{type:PokemonType}){return <Link to={`/categories/${type}`} className="type-card" style={{'--type-accent':typeColors[type]} as React.CSSProperties}><span className="type-icon">{typeIcons[type]}</span><span><strong>{type}</strong><small>Explore type</small></span><RightOutlined/></Link>}

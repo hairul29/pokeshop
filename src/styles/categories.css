@@ -1,0 +1,27 @@
+.tgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 16px; }
+.tgrid--lg { grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 20px; }
+.tcard {
+  --type-color: var(--blue);
+  position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 22px 12px 18px;
+  text-align: center; background: var(--card-bg); border: 2px solid var(--border); border-radius: 22px; box-shadow: var(--shadow);
+  transition: transform .25s, box-shadow .25s, border-color .25s;
+}
+.tcard::before { content: ''; position: absolute; inset: 0 0 auto; height: 8px; background: var(--type-color); }
+.tcard::after { content: ''; position: absolute; width: 140px; height: 140px; right: -50px; bottom: -60px; border-radius: 50%; background: var(--type-color); opacity: .14; transition: transform .35s; }
+.tcard__icon { display: grid; place-items: center; width: 64px; height: 64px; font-size: 1.9rem; border-radius: 50%; background: color-mix(in srgb, var(--type-color) 24%, var(--surface)); border: 3px solid var(--type-color); transition: transform .25s; }
+.tcard__name { font: 800 .95rem 'Orbitron', sans-serif; color: var(--text); }
+.tcard__count { font-size: .8rem; color: var(--text-2); }
+.tcard:hover { transform: translateY(-6px); border-color: var(--type-color); box-shadow: 0 16px 34px color-mix(in srgb, var(--type-color) 35%, transparent); }
+.tcard:hover .tcard__icon { transform: scale(1.18) rotate(-6deg); }
+.tcard:hover::after { transform: scale(1.4); }
+
+.type-banner { --type-color: var(--blue); display: flex; align-items: center; gap: 20px; padding: 24px 28px; margin-bottom: 32px; color: #fff; border: 3px solid var(--ink); border-radius: 26px; box-shadow: 0 6px 0 var(--ink); background: linear-gradient(120deg, var(--type-color), color-mix(in srgb, var(--type-color) 55%, #172554)); }
+.type-banner h1 { font-size: clamp(1.4rem, 4vw, 2.2rem); font-weight: 900; text-shadow: 2px 2px 0 rgba(0, 0, 0, .3); }
+.type-banner p { opacity: .92; }
+.type-banner__icon { display: grid; place-items: center; width: 76px; height: 76px; flex: none; font-size: 2.4rem; background: #fff; border: 3px solid var(--ink); border-radius: 50%; }
+
+@media (max-width: 480px) {
+  .tgrid, .tgrid--lg { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .type-banner { padding: 18px; gap: 14px; }
+  .type-banner__icon { width: 56px; height: 56px; font-size: 1.7rem; }
+}
